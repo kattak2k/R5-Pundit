@@ -5,6 +5,7 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     @articles = Article.all
+    authorize @articles
   end
 
   # GET /articles/1
@@ -15,6 +16,7 @@ class ArticlesController < ApplicationController
   # GET /articles/new
   def new
     @article = Article.new
+    authorize @articles
   end
 
   # GET /articles/1/edit
@@ -25,6 +27,8 @@ class ArticlesController < ApplicationController
   # POST /articles.json
   def create
     @article = Article.new(article_params)
+    @article.user = current_user  
+    authorize @article
 
     respond_to do |format|
       if @article.save
@@ -65,6 +69,7 @@ class ArticlesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_article
       @article = Article.find(params[:id])
+      authorize @article
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
