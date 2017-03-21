@@ -53,7 +53,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 ##Ins start RK01
-
 gem 'bootstrap-sass'
 gem 'devise'
+gem 'pundit'
 ##Ins end RK01
