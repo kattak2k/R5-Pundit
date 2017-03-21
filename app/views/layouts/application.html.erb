@@ -9,16 +9,14 @@
   </head>
 
   <body>
-<!-- Ins RK01 Devise -->
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-<!-- Ins RK01 Devise -->
     <%= render "layouts/navigation" %>
+    
     <div id="flash">
       <% flash.each do |key, value| %>
         <div class="flash <%= key %>"><%= value %></div>
       <% end %>
-    </div>
+    </div> 
+    
     <div class="container-fluid">
       <%= yield %>
     </div>
